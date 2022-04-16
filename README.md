@@ -372,7 +372,11 @@ issues地址：https://github.com/0x727/ShuiZe_0x727/issues/74
 
 2022.4.16 增加了调用Nuclei检测漏洞
 
-nuclei的参数在iniFile/config.ini配置，默认为`nuclei_config = -rl 300 -c 50 -timeout 5 -stats -silent -severity critical,high` 根据需求自行修改
+nuclei的参数在iniFile/config.ini配置，默认为
+
+`nuclei_config = -rl 300 -c 50 -timeout 5 -stats -silent -severity critical,high` 
+
+根据需求自行修改
 
 ![](./imgs/nuclei_1.png)
 
