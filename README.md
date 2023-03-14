@@ -60,6 +60,14 @@ chmod 777 docker_build.sh
 ./docker_build.sh
 ```
 
+也可参考 [@1itt1eB0y](https://github.com/1itt1eB0y) 提供的Dockerfile和docker-compose.yml构建镜像并运行
+
+链接：https://github.com/1itt1eB0y/MyCollection/tree/master/docker/shuize
+
+**请自行评估安全性**
+
+**脚本自带Linux版本的Nuclei和ksubdomain，如果是windows或者mac，需要自行更换版本。**
+
 ## 0x03 效果展示
 
 备案反查顶级域名
@@ -387,6 +395,50 @@ issues地址: https://github.com/0x727/ShuiZe_0x727/issues/104
 -as 参数，先使用 wappalyzer 进行指纹识别，在进行扫描。
 
 感谢 **anquanbiji** 反馈的建议
+
+2022.8.12 ShuiZe增加Dockerfile安装方式
+
+issues地址: https://github.com/0x727/ShuiZe_0x727/issues/99
+
+感谢 [@1itt1eB0y](https://github.com/1itt1eB0y) 提供的脚本。**安全性自行评估**
+
+
+2022.8.12 修复了大量反馈aiqicha脚本报错的问题，初步排查是被封IP的原因。
+
+2022.8.12 修复了quakeApi没有title导致报错的情况
+
+issues地址: https://github.com/0x727/ShuiZe_0x727/issues/120
+
+感谢 **Zimba5880** 反馈的建议
+
+2022.8.20 增加了快代理配置，漏洞检测时会使用快代理的代理池，这样可以避免当前IP被封后导致后续的扫描出现遗漏。
+
+购买快代理的隧道代理，地址：https://www.kuaidaili.com/cart?t=tps_c
+
+根据自己的需求选择包年包月或者按量付费，更换IP的频率。这里注意并发请求数的，并发数量越高，在配置文件里iniFile/config.ini的thread_num就可以设置的更高。
+
+假设并发数为5，那么thread_num不要设置超过10，具体的值自己测试。
+
+![](./imgs/kuaidaili1.png)
+
+购买后查看host、port、username、password，然后填入到配置文件里
+
+![](./imgs/kuaidaili2.png)
+
+![](./imgs/kuaidaili3.png)
+
+默认关闭快代理代理池功能，如果要开启，把switch设置为on，使用快代理代理池时会先验证是否配置正确
+
+![](./imgs/kuaidaili4.png)
+
+2022.8.27 集成了ObserverWard扫描指纹
+
+项目地址：https://github.com/0x727/ObserverWard
+
+指纹地址：https://github.com/0x727/FingerprintHub
+
+![](./imgs/ObserverWard1.png)
+
 
 ## 0x08 反馈
 
